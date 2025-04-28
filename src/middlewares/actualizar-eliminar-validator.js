@@ -1,5 +1,5 @@
 import { hash, verify } from "argon2";
-import User from "./user.model.js";
+import User from "../users/user.model.js";
 
 
 export const handlePasswordChange = async (req, res, next) => {
