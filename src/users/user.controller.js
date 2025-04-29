@@ -1,37 +1,60 @@
 import { response } from "express";
+import { hash, verify } from "argon2";
 import User from "./user.model.js";
 
 export const updateUser = async (req, res = response) => {
     try {
-        const { id } = req.params;
-        const userId = req.usuario._id;  
+        const { id } = req.params; 
+        const userId = req.usuario._id; 
+        const userRole = req.usuario.role; 
+        const { password, newPassword, role, ...data } = req.body;
 
-        const userToUpdateId = id || userId;
+        const userToUpdateId = userRole === "CLIENT" ? userId.toString() : id;
 
-        const userToUpdate = await User.findById(userToUpdateId);
-        if (!userToUpdate) {
+        const existingUser = await User.findById(userToUpdateId);
+        if (!existingUser) {
             return res.status(404).json({
                 success: false,
                 msg: "Usuario no encontrado"
             });
         }
 
-
-        if (userId.toString() !== userToUpdateId.toString() && req.usuario.role !== "ADMIN") {
+        if (userRole === "ADMIN" && role) {
+            data.role = role;
+        } else if (userRole !== "ADMIN" && userId.toString() !== userToUpdateId) {
             return res.status(403).json({
                 success: false,
                 msg: "No tienes permisos para modificar este usuario"
             });
         }
 
-        const data = { ...req.body, email: userToUpdate.email };
+        data.email = existingUser.email;
 
-        const updatedUser = await User.findByIdAndUpdate(userToUpdateId, data, { new: true });
+        if (newPassword) {
+            if (!password) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "Debe ingresar su contraseña actual para cambiarla"
+                });
+            }
+
+            const esIgual = await verify(existingUser.password, password);
+            if (!esIgual) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "La contraseña actual es incorrecta"
+                });
+            }
+
+            data.password = await hash(newPassword);
+        }
+
+        const user = await User.findByIdAndUpdate(userToUpdateId, data, { new: true });
 
         res.status(200).json({
             success: true,
             msg: "Usuario actualizado",
-            user: updatedUser
+            user
         });
 
     } catch (error) {
@@ -45,27 +68,55 @@ export const updateUser = async (req, res = response) => {
 };
 
 
-export const deleteUser = async (req, res = response) => {
+
+
+export const deleteUser = async (req, res) => {
     try {
-        const { id } = req.params;
-        const userToDelete = await User.findById(id);
-        if (!userToDelete) {
+        
+        const { id } = req.params; 
+        const userId = req.usuario._id; 
+        const userRole = req.usuario.role; 
+
+        const userToDeleteId = userRole === "USER" ? userId : id;
+
+        const user = await User.findById(userToDeleteId);
+        if (!user) {
             return res.status(404).json({
                 success: false,
                 msg: "Usuario no encontrado",
             });
         }
 
-        userToDelete.estado = false;
-        await userToDelete.save();
+        if (userRole === "CLIENT") {
+            const { password } = req.body; 
+            if (!password) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "Debe ingresar su contraseña para desactivar su cuenta"
+                });
+            }
+
+            const esIgual = await verify(user.password, password);
+            if (!esIgual) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "La contraseña actual es incorrecta"
+                });
+            }
+        }
+
+        user.estado = false;
+        await user.save();
 
         res.status(200).json({
             success: true,
             msg: "Usuario desactivado",
-            user: userToDelete
+            user
         });
+
     } catch (error) {
         console.error("Error en deleteUser:", error);
+
         res.status(500).json({
             success: false,
             msg: "Error al desactivar usuario",
@@ -73,4 +124,3 @@ export const deleteUser = async (req, res = response) => {
         });
     }
 };
-
