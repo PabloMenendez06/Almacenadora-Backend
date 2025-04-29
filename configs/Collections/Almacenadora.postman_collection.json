@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"12345678\"\r\n}",
+					"raw": "{\r\n    \"email\":\"mverstappen@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\" Fernando Alonso\",\r\n    \"username\":\"Alonso\",\r\n    \"email\":\"falonso@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Max Verstappen\",\r\n    \"username\":\"VER\",\r\n    \"email\":\"mverstappen@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -138,6 +138,268 @@
 						"user",
 						"eliminar",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proovedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Categorias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Televisores\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Proveedor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Proveedor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC2\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/provider/6810e03236cf9bb038bf729d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"provider",
+						"6810e03236cf9bb038bf729d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Celulares\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/category/6810dfaa36cf9bb038bf7299",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"category",
+						"6810dfaa36cf9bb038bf7299"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Proveedor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC2\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/provider/6810e03236cf9bb038bf729d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"provider",
+						"6810e03236cf9bb038bf729d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Category",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC2\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/category/6810dfaa36cf9bb038bf7299",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"category",
+						"6810dfaa36cf9bb038bf7299"
 					]
 				}
 			},
