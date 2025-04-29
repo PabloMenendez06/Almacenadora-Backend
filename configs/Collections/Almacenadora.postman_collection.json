@@ -67,6 +67,81 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Editar Admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmYjBiNGEwODRiNGI1MTE1OTQwNWYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTg2MjQyOCwiZXhwIjoxNzQ1ODY2MDI4fQ.AOs0vY8Fumea9nbYQvSKY-sQPwdx5w-F3aU2LIbsM-Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\" Lando Norris\",\r\n    \"username\":\"nor\",\r\n    \"email\":\"lnorris@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/user/editar/680fb225509526fb954260e8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"user",
+						"editar",
+						"680fb225509526fb954260e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmYjIyNTUwOTUyNmZiOTU0MjYwZTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTg4NTcxMywiZXhwIjoxNzQ1ODg5MzEzfQ.WdL0kDKe-qgGH3nO2LnAJIGkg_3DdLPXrMaWU58-fz0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/user/eliminar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"user",
+						"eliminar",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
