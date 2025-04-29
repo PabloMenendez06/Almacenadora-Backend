@@ -404,6 +404,207 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Agregar Producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTk0NTEyMiwiZXhwIjoxNzQ1OTQ4NzIyfQ.54vwCXbAq-7vx8nSBpXB5d4lbB3ij8OQ0DvGBwdgceQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Moto Edge 60 Fusion\",\r\n  \"description\": \"Colaboracion con Pantone\",\r\n  \"provider\": \"Motorola\",\r\n  \"price\": 3000,\r\n  \"stock\": 8,\r\n  \"category\": \"Celulares\",\r\n  \"entryDate\": \"11/09/2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Producto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTk0NTEyMiwiZXhwIjoxNzQ1OTQ4NzIyfQ.54vwCXbAq-7vx8nSBpXB5d4lbB3ij8OQ0DvGBwdgceQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Moto Edge 60 Fusion\",\r\n  \"description\": \"Colaboracion con Pantone\",\r\n  \"provider\": \"Motorola\",\r\n  \"price\": 3500,\r\n  \"stock\": 17,\r\n  \"category\": \"Celulares\",\r\n  \"entryDate\": \"28/04/2025\",\r\n  \"exitDate\": \"11/09/2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/681107459dd173fa8dfbafb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						"681107459dd173fa8dfbafb8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTk0NTEyMiwiZXhwIjoxNzQ1OTQ4NzIyfQ.54vwCXbAq-7vx8nSBpXB5d4lbB3ij8OQ0DvGBwdgceQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Moto Edge 60 Fusion\",\r\n  \"description\": \"Colaboracion con Pantone\",\r\n  \"provider\": \"Motorola\",\r\n  \"price\": 3500,\r\n  \"stock\": 17,\r\n  \"category\": \"Celulares\",\r\n  \"entryDate\": \"28/04/2025\",\r\n  \"exitDate\": \"11/09/2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/681107459dd173fa8dfbafb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						"681107459dd173fa8dfbafb8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos Categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/category/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						"category",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos Fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/recentEgresed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						"recentEgresed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos Nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/storagePenguin/v1/product/search/60",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"storagePenguin",
+						"v1",
+						"product",
+						"search",
+						"60"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

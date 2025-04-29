@@ -10,6 +10,7 @@ import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
 import categoryRoutes from '../src/categories/category.routes.js';
 import providerRoutes from '../src/providers/provider.routes.js';
+import productRoutes from '../src/products/product.routes.js';
 
 
 const middlewares = (app) => {
@@ -26,6 +27,7 @@ const routes = (app) =>{
     app.use('/storagePenguin/v1/user', userRoutes);
     app.use('/storagePenguin/v1/category', categoryRoutes);
     app.use('/storagePenguin/v1/provider', providerRoutes);
+    app.use('/storagePenguin/v1/product', productRoutes);
 }
 
 const conectarDB = async () => {
