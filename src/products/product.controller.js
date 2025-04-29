@@ -10,9 +10,9 @@ const parseDate = (dateString) => {
 
 export const saveProduct = async (req, res) => {
     try {
-      const { name, description, provider, price, stock, category, entryDate } = req.body;
+      const { name, description, provider, price, stock, category, entryDate, expirationDate } = req.body;
   
-      if (!name || !description || !provider || !price || !stock || !category || !entryDate) {
+      if (!name || !description || !provider || !price || !stock || !category || !entryDate || !expirationDate) {
         return res.status(400).json({
           success: false,
           message: "Todos los campos son obligatorios",
@@ -32,6 +32,7 @@ export const saveProduct = async (req, res) => {
       }
   
       const parsedEntryDate = parseDate(entryDate);
+      const parsedExpirationDate = parseDate(expirationDate);
   
       const product = new Product({
         name,
@@ -42,6 +43,7 @@ export const saveProduct = async (req, res) => {
         stock,
         category: categoryFound._id,  
         entryDate: parsedEntryDate,
+        expirationDate: parsedExpirationDate,
       });
       
   
@@ -153,7 +155,7 @@ export const filterProductsByCategory = async (req, res) => {
 export const updateProduct = async (req, res) => {
     try {
       const { id } = req.params;
-      const { name, description, provider, price, stock, category, entryDate, exitDate } = req.body;
+      const { name, description, provider, price, stock, category, entryDate, exitDate, expirationDate } = req.body;
   
       const updateData = {};
   
@@ -180,6 +182,7 @@ export const updateProduct = async (req, res) => {
   
       if (entryDate) updateData.entryDate = parseDate(entryDate);
       if (exitDate) updateData.exitDate = parseDate(exitDate);
+      if (expirationDate) updateData.expirationDate = parseDate(expirationDate);
   
       const product = await Product.findByIdAndUpdate(id, updateData, { new: true });
   

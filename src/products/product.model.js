@@ -46,7 +46,11 @@ const ProductSchema = new Schema(
     },
     exitDate: {
       type: Date,
-      default: null, 
+      default: null,
+    },
+    expirationDate: {
+      type: Date,
+      required: true,
     },
   },
   {
@@ -56,4 +60,3 @@ const ProductSchema = new Schema(
 );
 
 export default model("Product", ProductSchema);
-
