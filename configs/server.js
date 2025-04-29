@@ -8,6 +8,8 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
+import categoryRoutes from '../src/categories/category.routes.js';
+import providerRoutes from '../src/providers/provider.routes.js';
 
 
 const middlewares = (app) => {
@@ -22,6 +24,8 @@ const middlewares = (app) => {
 const routes = (app) =>{
     app.use('/storagePenguin/v1/auth', authRoutes);
     app.use('/storagePenguin/v1/user', userRoutes);
+    app.use('/storagePenguin/v1/category', categoryRoutes);
+    app.use('/storagePenguin/v1/provider', providerRoutes);
 }
 
 const conectarDB = async () => {
