@@ -1,4 +1,9 @@
 import User from '../users/user.model.js';
+import Category from '../categories/category.model.js';
+import Producto from '../products/product.model.js';
+import Provider from "../providers/provider.model.js";
+
+
 
 export const existenteEmail = async (email = '') =>{
     const existeEmail = await User.findOne({ email });
@@ -15,3 +20,27 @@ export const existeUsuarioById = async (id = '') => {
         throw new Error(`El ID ${id} no existe`);
     }
 }
+
+export const existenteCategory = async (name = '') =>{
+    const existenteCategory = await Category.findOne({ name });
+
+    if(existenteCategory){
+        throw new Error(` ${ name } ya existe en la base de datos`);
+    }
+}
+
+export const existenteProducto = async (name = '') =>{
+    const existenteProducto = await Producto.findOne({ name });
+
+    if(existenteProducto){
+        throw new Error(` ${ name } ya existe en la base de datos`);
+    }
+}
+
+export const existenteProvider = async (name = '') => {
+    const existente = await Provider.findOne({ name });
+  
+    if (existente) {
+      throw new Error(`El proveedor con nombre "${name}" ya existe en la base de datos`);
+    }
+  };
