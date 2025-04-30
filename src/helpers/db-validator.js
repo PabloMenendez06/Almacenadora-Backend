@@ -2,6 +2,7 @@ import User from '../users/user.model.js';
 import Category from '../categories/category.model.js';
 import Producto from '../products/product.model.js';
 import Provider from "../providers/provider.model.js";
+import Client from "../clients/client.model.js"
 
 
 
@@ -42,5 +43,21 @@ export const existenteProvider = async (name = '') => {
   
     if (existente) {
       throw new Error(`El proveedor con nombre "${name}" ya existe en la base de datos`);
+    }
+  };
+
+  export const existenteClient = async (nit = '') => {
+    const cliente = await Client.findOne({ nit });
+  
+    if (cliente) {
+      throw new Error(`El cliente con NIT ${nit} ya existe en la base de datos`);
+    }
+  };
+  
+export const existeClientById = async (id = '') => {
+    const cliente = await Client.findById(id);
+  
+    if (!cliente) {
+      throw new Error(`El cliente con ID ${id} no existe en la base de datos`);
     }
   };
