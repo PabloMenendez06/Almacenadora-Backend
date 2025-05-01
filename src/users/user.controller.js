@@ -9,7 +9,7 @@ export const updateUser = async (req, res = response) => {
         const userRole = req.usuario.role; 
         const { password, newPassword, role, ...data } = req.body;
 
-        const userToUpdateId = userRole === "CLIENT" ? userId.toString() : id;
+        const userToUpdateId = userRole === "USER" ? userId.toString() : id;
 
         const existingUser = await User.findById(userToUpdateId);
         if (!existingUser) {
@@ -87,7 +87,7 @@ export const deleteUser = async (req, res) => {
             });
         }
 
-        if (userRole === "CLIENT") {
+        if (userRole === "USER") {
             const { password } = req.body; 
             if (!password) {
                 return res.status(400).json({
