@@ -9,58 +9,71 @@ const parseDate = (dateString) => {
 };
 
 export const saveProduct = async (req, res) => {
-    try {
-      const { name, description, provider, price, stock, category, entryDate, expirationDate } = req.body;
-  
-      if (!name || !description || !provider || !price || !stock || !category || !entryDate || !expirationDate) {
-        return res.status(400).json({
-          success: false,
-          message: "Todos los campos son obligatorios",
-        });
-      }
-  
-      const categoryFound = await Category.findOne({ name: category });
-      const providerFound = await Provider.findOne({ name: provider });
-  
-      if (!categoryFound) {
+  try {
+    console.log("Datos recibidos en el backend:", req.body); 
 
-        return res.status(404).json({ success: false, message: "Categoría no encontrada" });
-      }
-  
-      if (!providerFound) {
-        return res.status(404).json({ success: false, message: "Proveedor no encontrado" });
-      }
-  
-      const parsedEntryDate = parseDate(entryDate);
-      const parsedExpirationDate = parseDate(expirationDate);
-  
-      const product = new Product({
-        name,
+    const { name, description, provider, price, stock, category, entryDate, expirationDate } = req.body;
 
-        description,
-        provider: providerFound._id,
-        price,
-        stock,
-        category: categoryFound._id,  
-        entryDate: parsedEntryDate,
-        expirationDate: parsedExpirationDate,
-      });
-      
-  
-      await product.save();
-  
-      res.status(201).json({
-        success: true,
-        message: "Producto creado exitosamente",
-        product,
-      });
-    } catch (error) {
-      res.status(500).json({
+    if (!name || !description || !provider || !price || !stock || !category || !entryDate || !expirationDate) {
+      return res.status(400).json({
         success: false,
-        message: "Error al crear el producto",
-        error,
+        message: "Todos los campos son obligatorios",
       });
     }
+
+    if (description.length < 10) {
+      return res.status(400).json({
+        success: false,
+        message: "La descripción debe tener al menos 10 caracteres",
+      });
+    }
+
+    const categoryFound = await Category.findOne({ name: category });
+    const providerFound = await Provider.findOne({ name: provider });
+
+    if (!categoryFound) {
+      return res.status(404).json({ success: false, message: "Categoría no encontrada" });
+    }
+
+    if (!providerFound) {
+      return res.status(404).json({ success: false, message: "Proveedor no encontrado" });
+    }
+
+    const parsedEntryDate = parseDate(entryDate);
+    const parsedExpirationDate = parseDate(expirationDate);
+
+    if (isNaN(parsedEntryDate) || isNaN(parsedExpirationDate)) {
+      return res.status(400).json({
+        success: false,
+        message: "Las fechas ingresadas no son válidas",
+      });
+    }
+
+    const product = new Product({
+      name,
+      description,
+      provider: providerFound._id,
+      price,
+      stock,
+      category: categoryFound._id,
+      entryDate: parsedEntryDate,
+      expirationDate: parsedExpirationDate,
+    });
+
+    await product.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Producto creado exitosamente",
+      product,
+    });
+  } catch (error) {
+    console.error("Error al crear producto:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error interno al crear el producto",
+    });
+  }
 };
   
 
