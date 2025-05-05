@@ -3,10 +3,9 @@ import Category from "../categories/category.model.js";
 import Provider from "../providers/provider.model.js";
 
 
-const parseDate = (dateString) => {
-  const [day, month, year] = dateString.split("/").map(Number);
-  return new Date(year, month - 1, day);
-};
+function parseDate(dateString) {
+  return new Date(dateString); 
+}
 
 export const saveProduct = async (req, res) => {
   try {
