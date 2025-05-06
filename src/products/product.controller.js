@@ -1,60 +1,34 @@
 import Product from "./product.model.js";
 import Category from "../categories/category.model.js";
 import Provider from "../providers/provider.model.js";
+import { validateProductFields } from "../middlewares/validateProductFields.js";
+import { validateUpdateProductFields } from "../middlewares/validateUpdateProductFields.js";
 
-
-function parseDate(dateString) {
-  return new Date(dateString); 
-}
 
 export const saveProduct = async (req, res) => {
   try {
-    console.log("Datos recibidos en el backend:", req.body); 
+    console.log("Datos recibidos en el backend:", req.body);
 
-    const { name, description, provider, price, stock, category, entryDate, expirationDate } = req.body;
+    const validation = await validateProductFields(req.body);
 
-    if (!name || !description || !provider || !price || !stock || !category || !entryDate || !expirationDate) {
-      return res.status(400).json({
+    if (!validation.valid) {
+      return res.status(validation.status).json({
         success: false,
-        message: "Todos los campos son obligatorios",
+        message: validation.message,
       });
     }
 
-    if (description.length < 10) {
-      return res.status(400).json({
-        success: false,
-        message: "La descripción debe tener al menos 10 caracteres",
-      });
-    }
-
-    const categoryFound = await Category.findOne({ name: category });
-    const providerFound = await Provider.findOne({ name: provider });
-
-    if (!categoryFound) {
-      return res.status(404).json({ success: false, message: "Categoría no encontrada" });
-    }
-
-    if (!providerFound) {
-      return res.status(404).json({ success: false, message: "Proveedor no encontrado" });
-    }
-
-    const parsedEntryDate = parseDate(entryDate);
-    const parsedExpirationDate = parseDate(expirationDate);
-
-    if (isNaN(parsedEntryDate) || isNaN(parsedExpirationDate)) {
-      return res.status(400).json({
-        success: false,
-        message: "Las fechas ingresadas no son válidas",
-      });
-    }
+    const {
+      category,
+      provider,
+      parsedEntryDate,
+      parsedExpirationDate,
+    } = validation;
 
     const product = new Product({
-      name,
-      description,
-      provider: providerFound._id,
-      price,
-      stock,
-      category: categoryFound._id,
+      ...req.body,
+      provider: provider._id,
+      category: category._id,
       entryDate: parsedEntryDate,
       expirationDate: parsedExpirationDate,
     });
@@ -164,57 +138,40 @@ export const filterProductsByCategory = async (req, res) => {
   }
 };
 
+
 export const updateProduct = async (req, res) => {
-    try {
-      const { id } = req.params;
-      const { name, description, provider, price, stock, category, entryDate, exitDate, expirationDate } = req.body;
-  
-      const updateData = {};
-  
-      if (name) updateData.name = name;
-      if (description) updateData.description = description;
-      if (price !== undefined) updateData.price = price;
-      if (stock !== undefined) updateData.stock = stock;
-  
-      if (provider) {
-        const providerFound = await Provider.findOne({ name: provider });
-        if (!providerFound) {
-          return res.status(404).json({ success: false, message: "Proveedor no encontrado" });
-        }
-        updateData.provider = providerFound._id;
-      }
-  
-      if (category) {
-        const categoryFound = await Category.findOne({ name: category });
-        if (!categoryFound) {
-          return res.status(404).json({ success: false, message: "Categoría no encontrada" });
-        }
-        updateData.category = categoryFound._id;
-      }
-  
-      if (entryDate) updateData.entryDate = parseDate(entryDate);
-      if (exitDate) updateData.exitDate = parseDate(exitDate);
-      if (expirationDate) updateData.expirationDate = parseDate(expirationDate);
-  
-      const product = await Product.findByIdAndUpdate(id, updateData, { new: true });
-  
-      if (!product) {
-        return res.status(404).json({ success: false, message: "Producto no encontrado" });
-      }
-  
-      res.json({
-        success: true,
-        message: "Producto actualizado correctamente",
-        product,
-      });
-    } catch (error) {
-      res.status(500).json({
+  try {
+    const { id } = req.params;
+
+    const validation = await validateUpdateProductFields(req.body);
+
+    if (!validation.valid) {
+      return res.status(validation.status).json({
         success: false,
-        message: "Error al actualizar el producto",
-        error,
+        message: validation.message,
       });
     }
+
+    const product = await Product.findByIdAndUpdate(id, validation.updateData, { new: true });
+
+    if (!product) {
+      return res.status(404).json({ success: false, message: "Producto no encontrado" });
+    }
+
+    res.json({
+      success: true,
+      message: "Producto actualizado correctamente",
+      product,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error al actualizar el producto",
+      error,
+    });
+  }
 };
+
   
 
 export const deleteProduct = async (req, res) => {

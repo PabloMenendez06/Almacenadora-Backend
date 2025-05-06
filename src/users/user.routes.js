@@ -50,7 +50,7 @@ router.delete(
     deleteUser
 );
 
-router.get("/search", searchUser);
+router.get("/search/:name", searchUser);
 
 
 export default router;

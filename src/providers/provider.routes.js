@@ -6,19 +6,23 @@ import {
   listProviders,
   deleteProvider,
 } from "./provider.controller.js";
-import { validarCampos } from "../middlewares/validar-campos.js";
-import { validarJWT } from "../middlewares/validar-jwt.js";
-import { existenteProvider } from "../helpers/db-validator.js"; 
+import { validarCampos } from "../middlewares/validar-campos.js"; 
+import { validarJWT } from "../middlewares/validar-jwt.js"; 
+import  providerExists  from "../middlewares/providerExists.js"; 
+import providerIsDefault from "../middlewares/providerIsDefault.js";
+import {validateProviderFields} from "../middlewares/validateProviderFields.js";
+import { validateUpdateProviderFields } from "../middlewares/validateUpdateProviderFields.js"; 
+import { providerNameExists } from "../middlewares/providerNameExists.js"; 
 
 const router = Router();
+
 
 router.post(
   "/",
   [
     validarJWT,
-    check("name", "El nombre es obligatorio").not().isEmpty(),
-    check("email", "El correo es obligatorio").not().isEmpty(),
-    check("number", "El número de contacto es obligatorio").not().isEmpty(),
+    validateProviderFields,  
+    providerNameExists,             
     validarCampos,
   ],
   createProvider
@@ -29,20 +33,24 @@ router.put(
   [
     validarJWT,
     check("id", "No es un ID válido").isMongoId(),
-    check("id").custom(existenteProvider),
+    providerExists,                
+    providerIsDefault,             
+    validateUpdateProviderFields,  
     validarCampos,
   ],
   updateProvider
 );
 
+
 router.get("/", listProviders);
+
 
 router.delete(
   "/:id",
   [
     validarJWT,
     check("id", "No es un ID válido").isMongoId(),
-    check("id").custom(existenteProvider),
+    providerExists,                
     validarCampos,
   ],
   deleteProvider
