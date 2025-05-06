@@ -5,14 +5,6 @@ export const createProvider = async (req, res) => {
   try {
     const { name, email, number } = req.body;
 
-    const existingProvider = await Provider.findOne({ name });
-    if (existingProvider) {
-      return res.status(400).json({
-        success: false,
-        message: "El proveedor ya existe",
-      });
-    }
-
     const provider = new Provider({ name, email, number });
     await provider.save();
 
@@ -22,19 +14,22 @@ export const createProvider = async (req, res) => {
       provider,
     });
   } catch (error) {
+    console.error("Error al crear proveedor:", error);
     res.status(500).json({
       success: false,
       message: "Error al crear el proveedor",
-      error,
+      error: error.message || error,
     });
   }
 };
 
+
 export const updateProvider = async (req, res) => {
   try {
     const { id } = req.params;
+    const { name, email, number } = req.body;
 
-    const updatedProvider = await Provider.findByIdAndUpdate(id, req.body, {
+    const updatedProvider = await Provider.findByIdAndUpdate(id, { name, email, number }, {
       new: true,
     });
 
@@ -59,6 +54,7 @@ export const updateProvider = async (req, res) => {
   }
 };
 
+
 export const listProviders = async (req, res) => {
   try {
     const providers = await Provider.find({ status: true });
@@ -80,13 +76,7 @@ export const deleteProvider = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const provider = await Provider.findById(id);
-    if (!provider) {
-      return res.status(404).json({
-        success: false,
-        message: "Proveedor no encontrado",
-      });
-    }
+    const provider = req.provider; 
 
     const defaultProvider = await Provider.findOne({ name: "default" });
     if (!defaultProvider) {
@@ -121,3 +111,4 @@ export const deleteProvider = async (req, res) => {
     });
   }
 };
+

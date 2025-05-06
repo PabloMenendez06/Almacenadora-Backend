@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "5cbd3ad0-d0a8-4121-a86b-1b29b8332ced",
+		"_postman_id": "623b36f9-731e-4085-b1c8-24e3617cb052",
 		"name": "Almacenadora",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42597863"
+		"_exporter_id": "42042928"
 	},
 	"item": [
 		{
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"12345678\"\r\n}",
+					"raw": "{\r\n    \"email\":\"leomessi@gmail.com\",\r\n    \"password\":\"11111111\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Max Verstappen\",\r\n    \"username\":\"VER\",\r\n    \"email\":\"mverstappen@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Alejandro Magno\",\r\n    \"username\":\"magno\",\r\n    \"email\":\"alejandromagno@gmail.com\",\r\n    \"password\":\"10101010\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,13 +192,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWFlMWNlOGRiN2E3NmNjZWNhMDMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5MjE4MSwiZXhwIjoxNzQ2NDk1NzgxfQ.BrM0Zb-VzRMFC-YtOcGnkoyhPgqi8O32S4CIMDaIBlo",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Televisores\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Juguetes\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -228,13 +228,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyZGVhNWYyOGI0YmZmZjc2MDMxZmMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjE1Mzk4MCwiZXhwIjoxNzQ2MTU3NTgwfQ.DjEnb5NjoPr8Kf6QQdCKuspN9C90XdCe-x-ubJxwfA0",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWEwOGNlOGRiN2E3NmNjZWM5ZmEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5NDQ1NywiZXhwIjoxNzQ2NDk4MDU3fQ.mnJDkx_RXBAQeU-R_t8CFOgI35hqDEjnVsdzLLMhlZU",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"type\": \"INPUT\",\r\n    \"quantity\": 20\r\n}",
+					"raw": "{\r\n    \"type\": \"INPUT\",\r\n    \"quantity\": 40\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -242,7 +242,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/history/register-product/6813d69ad79326c8c1d30a88",
+					"raw": "http://localhost:3333/storagePenguin/v1/history/register-product/681960f1ce8db7a76cceca3a",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -253,7 +253,7 @@
 						"v1",
 						"history",
 						"register-product",
-						"6813d69ad79326c8c1d30a88"
+						"681960f1ce8db7a76cceca3a"
 					]
 				}
 			},
@@ -338,13 +338,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWFlMWNlOGRiN2E3NmNjZWNhMDMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5MjE4MSwiZXhwIjoxNzQ2NDk1NzgxfQ.BrM0Zb-VzRMFC-YtOcGnkoyhPgqi8O32S4CIMDaIBlo",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"USAC\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Bimbo\",\r\n    \"email\": \"Bimbo@edu.gt\",\r\n    \"number\": \"5555-5555\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -522,13 +522,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyZGVhNWYyOGI0YmZmZjc2MDMxZmMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjEzMDQ0NiwiZXhwIjoxNzQ2MTM0MDQ2fQ.Enji-RfGtHOZD8QyzRX29f6gSW2MwPIFKgbQjZBcNgI",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWFlMWNlOGRiN2E3NmNjZWNhMDMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5MjE4MSwiZXhwIjoxNzQ2NDk1NzgxfQ.BrM0Zb-VzRMFC-YtOcGnkoyhPgqi8O32S4CIMDaIBlo",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Moto Edge 60 Fusion\",\r\n  \"description\": \"Colaboracion con Pantone\",\r\n  \"provider\": \"default\",\r\n  \"price\": 3000,\r\n  \"stock\": 8,\r\n  \"category\": \"default\",\r\n  \"entryDate\": \"11/09/2025\",\r\n  \"expirationDate\": \"11/09/2025\"\r\n}\r\n",
+					"raw": "{\r\n  \"name\": \"Pistola de juguete\",\r\n  \"description\": \"Juguete tipo pistola\",\r\n  \"provider\": \"Matel\",\r\n  \"price\": 350,\r\n  \"stock\": 250,\r\n  \"category\": \"Juguetes\",\r\n  \"entryDate\": \"11/09/2025\",\r\n  \"expirationDate\": \"11/09/2025\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -723,13 +723,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNTE0ZTI3NjhiMDY3YjRjZWUyYzEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjAzMTEwNywiZXhwIjoxNzQ2MDM0NzA3fQ.aCzpoSqcrjSYWjyBNn_9Z1jb_Hjy1K3Nzjonk0lNV9g",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWEwOGNlOGRiN2E3NmNjZWM5ZmEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5NDQ1NywiZXhwIjoxNzQ2NDk4MDU3fQ.mnJDkx_RXBAQeU-R_t8CFOgI35hqDEjnVsdzLLMhlZU",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Juan Pérez\",\r\n  \"email\": \"juan.perez2@example.com\",\r\n  \"nit\": \"123456789012\",\r\n  \"phone\": \"+591 123 456 789\"\r\n}\r\n",
+					"raw": "{\r\n  \"name\": \"Kevin Guitierrez\",\r\n  \"email\": \"kevingutierrez@gmail.com\",\r\n  \"nit\": \"7894561234\",\r\n  \"phone\": \"+502 321 654 789\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -864,6 +864,14 @@
 						""
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}

@@ -14,7 +14,7 @@ export const validateCreateClient = async (req, res) => {
 
 export const validateUpdateClient = async (req, res) => {
   const { id } = req.params;
-  const updatedClient = await Client.findByIdAndUpdate(id, req.body, { new: true });
+  const updatedClient = await Client.findByIdAndUpdate(id, req.body, { new: true }); 
 
   if (!updatedClient) {
     res.status(404).json({

@@ -1,34 +1,102 @@
 [{
   "_id": {
-    "$oid": "680fb0b4a084b4b51159405f"
+    "$oid": "68110e13ad4172208ab3f9b0"
   },
   "name": "Admin",
   "username": "admin",
   "email": "admin@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$xTnFJleuTbcMtThzI0tGhg$SHrBw4255CkWAwPM8HD/wQcZqiuBB4lq6NSthjtOWjM",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$AY1BcuRDnfsFl5M0iqkaow$aLgO+25+gcQTXxp6/oHe5/EsC4iatnrirCxnk1AadJw",
   "role": "ADMIN",
   "estado": true,
   "createdAt": {
-    "$date": "2025-04-28T16:45:40.617Z"
+    "$date": "2025-04-29T17:36:19.360Z"
   },
   "updatedAt": {
-    "$date": "2025-04-28T16:45:40.617Z"
+    "$date": "2025-04-29T17:36:19.360Z"
   }
 },
 {
   "_id": {
-    "$oid": "680fb225509526fb954260e8"
+    "$oid": "681959bace8db7a76ccec9f7"
   },
-  "name": "Fernando Alonso",
-  "username": "Alonso",
-  "email": "falonso@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$BtmBXkTxjRZiUZnl/LLA0w$tKQzmfa+YlJi0IQhjajV8XZ2dRsWyQpunydnyzDYfEI",
+  "name": "Max Verstappen",
+  "username": "VER",
+  "email": "mverstappen@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$p0DC23KogI8yIj8REsrb6w$zHSl0LFsid8tkKY5FUs4bHRnI+pPxIqLAe3+H0v4TtM",
   "role": "USER",
   "estado": true,
   "createdAt": {
-    "$date": "2025-04-28T16:51:49.617Z"
+    "$date": "2025-05-06T00:37:14.707Z"
   },
   "updatedAt": {
-    "$date": "2025-04-28T16:51:49.617Z"
+    "$date": "2025-05-06T00:37:14.707Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195a08ce8db7a76ccec9fa"
+  },
+  "name": "Leonel Messi",
+  "username": "Mess10",
+  "email": "leomessi@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$vi0GN5kH5h1qYokik8EOFA$EdZYE6b2IjkGQmpAxR5tpv1uot9MGr2haqd+vWd7tYc",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:38:32.821Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:38:32.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195a43ce8db7a76ccec9fd"
+  },
+  "name": "Cristiano Ronaldo",
+  "username": "ronal7",
+  "email": "crisronaldo7@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$+j8iCtmwsFyE4Y4cduffgQ$DyAlNmhDV82BIotQVdaTDzygjTF9xSD0OuhkIRdPVg0",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:39:31.290Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:39:31.290Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195a9ece8db7a76cceca00"
+  },
+  "name": "Nicolas Tesla",
+  "username": "tesla",
+  "email": "nicolastesla@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$BQ6aTZfEkNT88u5HD+BaEQ$ETA7SZFGvkF6pvh4Id5ionXtHouNBzRjb4GvuSKNwPI",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:41:02.889Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:41:02.889Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195ae1ce8db7a76cceca03"
+  },
+  "name": "Alejandro Magno",
+  "username": "magno",
+  "email": "alejandromagno@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$VWiArmaEZ4mQKrEGvUgajg$TBs6QrXNyD8eLmDu4IBWsefkXmkuHpL0l6tjYN81LZI",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:42:09.096Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:42:09.096Z"
   }
 }]

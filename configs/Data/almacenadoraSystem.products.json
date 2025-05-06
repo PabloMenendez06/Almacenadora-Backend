@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "681960f1ce8db7a76cceca3a"
+  },
+  "name": "Pesas de 20",
+  "description": "Pesas para entrenamiento",
+  "provider": {
+    "$oid": "68195eacce8db7a76cceca28"
+  },
+  "price": 450,
+  "stock": 25,
+  "category": {
+    "$oid": "68195bb9ce8db7a76cceca10"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "exitDate": null,
+  "expirationDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-06T01:08:01.468Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T01:08:01.468Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681961edce8db7a76cceca3f"
+  },
+  "name": "Pan bimbo",
+  "description": "pan en sandwich",
+  "provider": {
+    "$oid": "68195ed4ce8db7a76cceca2c"
+  },
+  "price": 55,
+  "stock": 120,
+  "category": {
+    "$oid": "68195be9ce8db7a76cceca14"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "exitDate": null,
+  "expirationDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-06T01:12:13.250Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T01:12:13.250Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819624bce8db7a76cceca44"
+  },
+  "name": "Iphone 16 Pro Max",
+  "description": "Telefono marca iphone",
+  "provider": {
+    "$oid": "68195e59ce8db7a76cceca24"
+  },
+  "price": 12000,
+  "stock": 200,
+  "category": {
+    "$oid": "68195b95ce8db7a76cceca08"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "exitDate": null,
+  "expirationDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-06T01:13:47.297Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T01:13:47.297Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681962b7ce8db7a76cceca49"
+  },
+  "name": "Camisa color negro",
+  "description": "Camisa talla s",
+  "provider": {
+    "$oid": "68195e3ace8db7a76cceca20"
+  },
+  "price": 700,
+  "stock": 150,
+  "category": {
+    "$oid": "68195ba6ce8db7a76cceca0c"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "exitDate": null,
+  "expirationDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-06T01:15:35.074Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T01:15:35.074Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68196340ce8db7a76cceca4e"
+  },
+  "name": "Pistola de juguete",
+  "description": "Juguete tipo pistola",
+  "provider": {
+    "$oid": "68195e03ce8db7a76cceca1c"
+  },
+  "price": 350,
+  "stock": 250,
+  "category": {
+    "$oid": "68195c48ce8db7a76cceca18"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "exitDate": null,
+  "expirationDate": {
+    "$date": "2025-11-09T06:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-06T01:17:52.677Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T01:17:52.677Z"
+  }
+}]
