@@ -9,7 +9,6 @@ import {
 } from '../middlewares/validar-auth.js';
 
 export const login = async (req, res) => {
-<<<<<<< HEAD
  
     const { email, password, username } = req.body;
  
@@ -64,44 +63,6 @@ export const login = async (req, res) => {
     }
 }
  
-=======
-  const { email, password, username } = req.body;
-
-  try {
-    const lowerEmail = email ? email.toLowerCase() : null;
-    const lowerUsername = username ? username.toLowerCase() : null;
-
-    const user = await Usuario.findOne({
-      $or: [{ email: lowerEmail }, { username: lowerUsername }]
-    });
-
-    req.user = user;
-    verificarExistenciaUsuario(req, res);
-    verificarEstadoUsuario(req, res);
-    await verificarPassword(req, res);
-
-    const token = await generarJWT(user.id);
-
-    return res.status(200).json({
-      msg: 'Inicio de sesión exitoso!!',
-      userDetails: {
-        _id: user.id,
-        username: user.username,
-        role: user.role,
-        token: token,
-      }
-    });
-
-  } catch (e) {
-    console.log(e);
-    return res.status(500).json({
-      message: "Server error",
-      error: e.message
-    });
-  }
-};
-
->>>>>>> acarrillo-2020412
 export const register = async (req, res) => {
   try {
     verificarCamposRegistro(req, res);
