@@ -12,7 +12,7 @@ import categoryRoutes from '../src/categories/category.routes.js';
 import providerRoutes from '../src/providers/provider.routes.js';
 import productRoutes from '../src/products/product.routes.js';
 import clientRoutes from '../src/clients/client.routes.js';
-
+import historyRoutes from '../src/history/history.routes.js';
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -30,6 +30,7 @@ const routes = (app) =>{
     app.use('/storagePenguin/v1/provider', providerRoutes);
     app.use('/storagePenguin/v1/product', productRoutes);
     app.use('/storagePenguin/v1/client', clientRoutes);
+    app.use('/storagePenguin/v1/history', historyRoutes);
 }
 
 const conectarDB = async () => {
