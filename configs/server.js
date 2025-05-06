@@ -24,13 +24,13 @@ const middlewares = (app) => {
 }
 
 const routes = (app) =>{
-    app.use('/storagePenguin/v1/auth', authRoutes);
-    app.use('/storagePenguin/v1/user', userRoutes);
-    app.use('/storagePenguin/v1/category', categoryRoutes);
-    app.use('/storagePenguin/v1/provider', providerRoutes);
-    app.use('/storagePenguin/v1/product', productRoutes);
-    app.use('/storagePenguin/v1/client', clientRoutes);
-    app.use('/storagePenguin/v1/history', historyRoutes);
+    app.use('/almacenadoraSystem/v1/auth', authRoutes);
+    app.use('/almacenadoraSystem/v1/user', userRoutes);
+    app.use('/almacenadoraSystem/v1/category', categoryRoutes);
+    app.use('/almacenadoraSystem/v1/provider', providerRoutes);
+    app.use('/almacenadoraSystem/v1/product', productRoutes);
+    app.use('/almacenadoraSystem/v1/client', clientRoutes);
+    app.use('/almacenadoraSystem/v1/history', historyRoutes);
 }
 
 const conectarDB = async () => {

@@ -1,27 +1,44 @@
 import History from "./history.model.js"
 import Product from "../products/product.model.js"
+import User from "../users/user.model.js"
+import jwt from "jsonwebtoken"
+
+import { 
+  validateWithdrawProduct, 
+  validateRegisterProduct 
+} from "../middlewares/validar-historial.js";
 
 export const registerProduct = async (req, res) => {
   try {
-    const { quantity, user, product, date } = req
-
-    const newRegistration = new History({
-      quantity,
-      date,
-      employee: user.id,
-      product: product.id,
-      productName: product.name,
-      employeeName: user.name
+    await validateRegisterProduct(req,res)
+    if (res.statusCode !== 200) return;
+    const token = await req.header('x-token')
+    const { quantity } = req.body
+    const { id } = req.params
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
+    const currentProduct = await Product.findById(id)
+    const currentUser = await User.findById(uid)
+    const fecha = new Date();
+    const dateToIzo = fecha.toISOString();
+    const dateCompleted = dateToIzo.replace('Z', '+00:00');
+    const newRegistration = await History.create({
+      quantity: quantity,
+      date: dateCompleted,
+      employee: currentUser.id,
+      employeeName: currentUser.name,
+      product: currentProduct.id,
+      productName: currentProduct.name
     })
+    console.log(newRegistration)
 
-    await History.create(newRegistration)
+    await newRegistration.save()
 
-    const stockRemaining = product.stock + quantity
-    await Product.findByIdAndUpdate(product.id, { stock: stockRemaining }, { new: true })
+    const stockRemaining = currentProduct.stock + quantity
+    await Product.findByIdAndUpdate(currentProduct.id, { stock: stockRemaining }, { new: true })
 
-    res.status(200).json({
+    return res.status(200).json({
       succes: true,
-      message: "Products registered successfuly",
+      message: "Products withdrawn successfuly",
       newRegistration
     })
   } catch (error) {
@@ -34,32 +51,43 @@ export const registerProduct = async (req, res) => {
 }
 
 export const withdrawProduct = async (req, res) => {
+  console.log('hola')
   try {
-    const { quantity, user, product, date, body: { motive, destiny } } = req
-
-    const newRegistration = new History({
+    await validateWithdrawProduct(req,res)
+    if (res.statusCode !== 200) return;
+    const token = await req.header('x-token')
+    const { quantity, motive, destiny} = req.body
+    const { id } = req.params
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
+    const currentProduct = await Product.findById(id)
+    const currentUser = await User.findById(uid)
+    const fecha = new Date();
+    const dateToIzo = fecha.toISOString();
+    const dateCompleted = dateToIzo.replace('Z', '+00:00');
+    const newRegistration = await History.create({
       quantity: quantity * -1,
       motive,
       destiny,
-      date,
-      employee: user.id,
-      product: product.id,
-      productName: product.name,
-      employeeName: user.name
+      date: dateCompleted,
+      employee: currentUser.id,
+      employeeName: currentUser.name,
+      product: currentProduct.id,
+      productName: currentProduct.name
     })
+    console.log(newRegistration)
 
-    await History.create(newRegistration)
+    await newRegistration.save()
 
-    const stockRemaining = product.stock - quantity
-    await Product.findByIdAndUpdate(product.id, { stock: stockRemaining }, { new: true })
+    const stockRemaining = currentProduct.stock - quantity
+    await Product.findByIdAndUpdate(currentProduct.id, { stock: stockRemaining }, { new: true })
 
-    res.status(200).json({
+    return res.status(200).json({
       succes: true,
       message: "Products withdrawn successfuly",
       newRegistration
     })
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Error withdrawing the product",
       error,
