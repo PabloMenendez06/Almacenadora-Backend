@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "623b36f9-731e-4085-b1c8-24e3617cb052",
+		"_postman_id": "3c224fd1-da9f-4786-a810-ed7a9d3b7838",
 		"name": "Almacenadora",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42042928"
+		"_exporter_id": "42619086"
 	},
 	"item": [
 		{
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"leomessi@gmail.com\",\r\n    \"password\":\"11111111\"\r\n}",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,14 +21,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/auth/login",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"auth",
 						"login"
@@ -52,14 +52,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/auth/register",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/auth/register",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"auth",
 						"register"
@@ -89,14 +89,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/user/editar/680fb225509526fb954260e8",
+					"raw": "http://localhost:3333/almacenadoraSystem/user/editar/680fb225509526fb954260e8",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"user",
 						"editar",
 						"680fb225509526fb954260e8"
@@ -126,14 +126,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/user/eliminar/",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/user/eliminar/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"user",
 						"eliminar",
@@ -149,14 +149,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/provider",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"provider"
 					]
@@ -170,14 +170,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/category",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"category"
 					]
@@ -206,14 +206,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/category",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"category"
 					]
@@ -228,13 +228,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWEwOGNlOGRiN2E3NmNjZWM5ZmEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5NDQ1NywiZXhwIjoxNzQ2NDk4MDU3fQ.mnJDkx_RXBAQeU-R_t8CFOgI35hqDEjnVsdzLLMhlZU",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFhMTA0OWQ4NTQyZTkxMjY0NWJhNDAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjU0MjQ4NywiZXhwIjoxNzQ2NTQ2MDg3fQ.iGeFnMqV1pHMkkNs1Zttv0KjCbBDmRFmj4qupUltFYc",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"type\": \"INPUT\",\r\n    \"quantity\": 40\r\n}",
+					"raw": "{\r\n    \"quantity\": 40\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -242,14 +242,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/history/register-product/681960f1ce8db7a76cceca3a",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/history/register-product/681960f1ce8db7a76cceca3a",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"history",
 						"register-product",
@@ -266,7 +266,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyZGVhNWYyOGI0YmZmZjc2MDMxZmMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjE0Mjg0NiwiZXhwIjoxNzQ2MTQ2NDQ2fQ.Q_o_Ow-YFIScgH9I_zuzfg_NpQHXVFxb8GoAiZYNMCk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFhMTA0OWQ4NTQyZTkxMjY0NWJhNDAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjU0OTQ3MCwiZXhwIjoxNzQ2NTUzMDcwfQ.bXN5y7tRXBdJnRM2SNitSevWTl73ifRv8vjFnfmoMd4",
 						"type": "text"
 					}
 				],
@@ -280,18 +280,18 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/history/withdraw-product/6813d69ad79326c8c1d30a88",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/history/withdraw-product/681960f1ce8db7a76cceca3a",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"history",
 						"withdraw-product",
-						"6813d69ad79326c8c1d30a88"
+						"681960f1ce8db7a76cceca3a"
 					]
 				}
 			},
@@ -315,14 +315,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/history/get-history",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/history/get-history",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"history",
 						"get-history"
@@ -352,14 +352,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/provider",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"provider"
 					]
@@ -388,14 +388,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/provider/6810e03236cf9bb038bf729d",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider/6810e03236cf9bb038bf729d",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"provider",
 						"6810e03236cf9bb038bf729d"
@@ -425,14 +425,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/category/6810dfaa36cf9bb038bf7299",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category/6810dfaa36cf9bb038bf7299",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"category",
 						"6810dfaa36cf9bb038bf7299"
@@ -462,14 +462,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/provider/6810e03236cf9bb038bf729d",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider/6810e03236cf9bb038bf729d",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"provider",
 						"6810e03236cf9bb038bf729d"
@@ -499,14 +499,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/category/6810dfaa36cf9bb038bf7299",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category/6810dfaa36cf9bb038bf7299",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"category",
 						"6810dfaa36cf9bb038bf7299"
@@ -536,14 +536,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						""
@@ -573,14 +573,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/681107459dd173fa8dfbafb8",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/681107459dd173fa8dfbafb8",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						"681107459dd173fa8dfbafb8"
@@ -610,14 +610,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/681107459dd173fa8dfbafb8",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/681107459dd173fa8dfbafb8",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						"681107459dd173fa8dfbafb8"
@@ -632,14 +632,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						""
@@ -654,14 +654,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/category/default",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/category/default",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						"category",
@@ -677,14 +677,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/recentEgresed",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/recentEgresed",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						"recentEgresed"
@@ -699,14 +699,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/product/search/60",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/search/60",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"product",
 						"search",
@@ -737,14 +737,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/client/",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"client",
 						""
@@ -774,14 +774,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/client/68125229609f475c7807d286",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/68125229609f475c7807d286",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"client",
 						"68125229609f475c7807d286"
@@ -811,14 +811,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/client/68125229609f475c7807d286",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/68125229609f475c7807d286",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"client",
 						"68125229609f475c7807d286"
@@ -851,27 +851,19 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3333/storagePenguin/v1/client/",
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3333",
 					"path": [
-						"storagePenguin",
+						"almacenadoraSystem",
 						"v1",
 						"client",
 						""
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
