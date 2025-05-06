@@ -1,18 +1,17 @@
 import Category from "./category.model.js";
 import Product from "../products/product.model.js";
+import {
+  validateCreateCategory,
+  validateUpdateCategory,
+  validateDeleteCategory,
+} from "../middlewares/validar-category.js";
 
 export const createCategory = async (req, res) => {
+  await validateCreateCategory(req, res);
+  if (res.headersSent) return;
+
   try {
     const { name } = req.body;
-    const existingCategory = await Category.findOne({ name });
-
-    if (existingCategory) {
-      return res.status(400).json({
-        success: false,
-        message: "La categoría ya existe",
-      });
-    }
-
     const category = new Category({ name });
     await category.save();
 
@@ -31,22 +30,14 @@ export const createCategory = async (req, res) => {
 };
 
 export const updateCategory = async (req, res) => {
+  await validateUpdateCategory(req, res);
+  if (res.headersSent) return;
+
   try {
-    const { id } = req.params;
-
-    const updatedCategory = await Category.findByIdAndUpdate(id, req.body, { new: true });
-
-    if (!updatedCategory) {
-      return res.status(404).json({
-        success: false,
-        message: "Categoría no encontrada",
-      });
-    }
-
     res.json({
       success: true,
       message: "Categoría actualizada exitosamente",
-      category: updatedCategory,
+      category: req.updatedCategory,
     });
   } catch (error) {
     res.status(500).json({
@@ -75,40 +66,14 @@ export const listCategories = async (req, res) => {
 };
 
 export const deleteCategory = async (req, res) => {
+  await validateDeleteCategory(req, res);
+  if (res.headersSent) return;
+
   try {
-    const { id } = req.params;
-
-    const category = await Category.findById(id);
-    if (!category) {
-      return res.status(404).json({
-        success: false,
-        message: "Categoría no encontrada",
-      });
-    }
-
-    const defaultCategory = await Category.findOne({ name: "default" });
-    if (!defaultCategory) {
-      return res.status(500).json({
-        success: false,
-        message: "No se encontró la categoría por defecto. No se puede proceder con la eliminación.",
-      });
-    }
-
-    await Product.updateMany(
-      { category: id },
-      { category: defaultCategory._id }
-    );
-
-    const updatedCategory = await Category.findByIdAndUpdate(
-      id,
-      { status: false },
-      { new: true }
-    );
-
     res.status(200).json({
       success: true,
       message: "Categoría eliminada exitosamente. Productos reasignados a la categoría por defecto.",
-      category: updatedCategory,
+      category: req.updatedCategory,
     });
   } catch (error) {
     console.error("Error al eliminar categoría:", error);

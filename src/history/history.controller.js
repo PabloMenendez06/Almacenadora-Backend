@@ -1,144 +1,69 @@
-import User from "../users/user.model.js"
-import Product from "../products/product.model.js"
 import History from "./history.model.js"
-import jwt from "jsonwebtoken"
+import Product from "../products/product.model.js"
 
 export const registerProduct = async (req, res) => {
   try {
-    console.log("registerProduct")
-    const token = await req.header('x-token')
-    const { id } = req.params
-    const { quantity } = req.body
+    const { quantity, user, product, date } = req
 
-    if (!quantity || !id) {
-      return res.status(400).json({
-        success: false,
-        message: "The fields quantity and product id are obligatory",
-      })
-    }
-  
-    if(!token){
-      return res.status(401).json({
-        msg: 'No hay token en la peticion'
-      })
-    }
-    
-    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
-    console.log()
-    
-    const currentUser = await User.findById(uid)
-    const chosenProduct = await Product.findById(id)
-    const currentDate = new Date()
-    const isoString = currentDate.toISOString()
-    const currentDateWFormat = isoString.replace('Z', '+00:00')
-    console.log(currentUser)
-    console.log(chosenProduct)
-    if(currentUser){
-      const newRegistration = new History({
-        quantity,
-        date: currentDateWFormat,
-        employee: currentUser.id,
-        product: chosenProduct.id,
-        productName: chosenProduct.name,
-        employeeName: currentUser.name
-      })
-      await History.create(newRegistration)
-      const stockProduct = chosenProduct.stock
-      const stockRemaining = stockProduct + quantity
-      await Product.findByIdAndUpdate(id,{ stock : stockRemaining }, {new:true})
-      res.status(200).json({
-        succes: true,
-        message: "Products registered successfuly",
-        newRegistration
-      })
-    } else{
-      res.status(500).json({
-        success: false,
-        message: "You are not allowed to do that"
-      });
-    }
+    const newRegistration = new History({
+      quantity,
+      date,
+      employee: user.id,
+      product: product.id,
+      productName: product.name,
+      employeeName: user.name
+    })
+
+    await History.create(newRegistration)
+
+    const stockRemaining = product.stock + quantity
+    await Product.findByIdAndUpdate(product.id, { stock: stockRemaining }, { new: true })
+
+    res.status(200).json({
+      succes: true,
+      message: "Products registered successfuly",
+      newRegistration
+    })
   } catch (error) {
     res.status(500).json({
       success: false,
       message: "Error registering the product",
       error,
-    });
+    })
   }
 }
 
 export const withdrawProduct = async (req, res) => {
   try {
-    console.log("withdrawProduct")
-    const token = await req.header('x-token')
-    const { id } = req.params
-    const { quantity, motive, destiny } = req.body
-    if (!quantity || !id) {
-      return res.status(400).json({
-        success: false,
-        message: "The fields quantity and product id are obligatory",
-      })
-    }
+    const { quantity, user, product, date, body: { motive, destiny } } = req
 
-    if(quantity <= 0){
-      return res.status(401).json({
-        msg: 'Set a valid quantity'
-      })
-    }
+    const newRegistration = new History({
+      quantity: quantity * -1,
+      motive,
+      destiny,
+      date,
+      employee: user.id,
+      product: product.id,
+      productName: product.name,
+      employeeName: user.name
+    })
 
-  
-    if(!token){
-      return res.status(401).json({
-        msg: 'No hay token en la peticion'
-      })
-    }
+    await History.create(newRegistration)
 
-    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
+    const stockRemaining = product.stock - quantity
+    await Product.findByIdAndUpdate(product.id, { stock: stockRemaining }, { new: true })
 
-    const currentUser = await User.findById(uid)
-    const chosenProduct = await Product.findById(id)
-    const currentDate = new Date()
-    const isoString = currentDate.toISOString()
-    const currentDateWFormat = isoString.replace('Z', '+00:00')
-    if(currentUser){
-      const newRegistration = new History({
-        quantity: quantity*-1,
-        motive,
-        destiny,
-        date: currentDateWFormat,
-        employee: currentUser.id,
-        product: chosenProduct.id,
-        productName: chosenProduct.name,
-        employeeName: currentUser.name
-      })
-      await History.create(newRegistration)
-      const stockProduct = chosenProduct.stock
-      let stockRemaining = 0
-      if((stockProduct - quantity) > 0) {
-        stockRemaining = stockProduct - quantity
-        await Product.findByIdAndUpdate(id,{ stock : stockRemaining }, {new:true})
-        res.status(200).json({
-          succes: true,
-          message: "Products withdrawn successfuly",
-          newRegistration
-        })
-      } else {
-        res.status(500).json({
-          success: false,
-          message: "The quantity that you are requesting is too big for the stock of the product."
-        }); 
-      }
-    } else{
-      res.status(500).json({
-        success: false,
-        message: "You are not allowed to do that"
-      });
-    } 
+    res.status(200).json({
+      succes: true,
+      message: "Products withdrawn successfuly",
+      newRegistration
+    })
   } catch (error) {
     res.status(500).json({
       success: false,
       message: "Error withdrawing the product",
       error,
-    });
+    })
   }
 }
 
