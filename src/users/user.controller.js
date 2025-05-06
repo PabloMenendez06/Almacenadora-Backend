@@ -124,3 +124,35 @@ export const deleteUser = async (req, res) => {
         });
     }
 };
+
+export const searchUser = async (req, res = response) => {
+    try {
+        const { name } = req.query;
+
+        if (!name) {
+            return res.status(400).json({
+                success: false,
+                msg: "El nombre es requerido para la búsqueda"
+            });
+        }
+
+        const users = await User.find({
+            name: { $regex: name, $options: "i" },
+            estado: true
+        });
+
+        res.status(200).json({
+            success: true,
+            users
+        });
+
+    } catch (error) {
+        console.error("Error en searchUser:", error);
+
+        res.status(500).json({
+            success: false,
+            msg: "Error al buscar usuarios",
+            error: error.message || error
+        });
+    }
+};

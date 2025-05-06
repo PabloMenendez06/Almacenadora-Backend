@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { updateUser, deleteUser } from "./user.controller.js";
+import { updateUser, deleteUser, searchUser } from "./user.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 import { existeUsuarioById } from "../helpers/db-validator.js";
@@ -32,6 +32,8 @@ router.delete(
     ],
     deleteUser
 );
+
+router.get("/search", searchUser);
 
 
 export default router;
