@@ -63,9 +63,9 @@ export const deleteUser = async (req, res) => {
 
 export const searchUser = async (req, res = response) => {
     try {
-        const { name } = req.query;
+        const { username } = req.query;
 
-        if (!name) {
+        if (!username) {
             return res.status(400).json({
                 success: false,
                 msg: "El nombre es requerido para la búsqueda"
@@ -73,7 +73,7 @@ export const searchUser = async (req, res = response) => {
         }
 
         const users = await User.find({
-            name: { $regex: name, $options: "i" },
+            username: { $regex: username, $options: "i" },
             estado: true
         });
 
