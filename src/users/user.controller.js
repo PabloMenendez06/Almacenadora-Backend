@@ -7,7 +7,6 @@ export const updateUser = async (req, res) => {
     try {
         const { newPassword, role, ...data } = req.body;
 
-
         const existingUser = req.userToUpdate;
         const userToUpdateId = req.userToUpdateId;
 
@@ -15,6 +14,10 @@ export const updateUser = async (req, res) => {
 
         if (newPassword) {
             data.password = await hash(newPassword);
+        }
+
+        if (role) {
+            data.role = role;
         }
 
         const user = await User.findByIdAndUpdate(userToUpdateId, data, { new: true });
