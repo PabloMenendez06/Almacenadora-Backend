@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "68110e13ad4172208ab3f9b4"
+  },
+  "name": "default",
+  "email": "default@gmail.com",
+  "number": "+12345678",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-29T17:36:19.405Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-29T17:36:19.405Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195e03ce8db7a76cceca1c"
+  },
+  "name": "Matel",
+  "email": "Matel@edu.gt",
+  "number": "1111-1111",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:55:31.460Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:55:31.460Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195e3ace8db7a76cceca20"
+  },
+  "name": "Gucci",
+  "email": "Gucci@edu.gt",
+  "number": "2222-2222",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:56:26.295Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:56:26.295Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195e59ce8db7a76cceca24"
+  },
+  "name": "Iphone",
+  "email": "Iphone@edu.gt",
+  "number": "3333-3333",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:56:57.294Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:56:57.294Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195eacce8db7a76cceca28"
+  },
+  "name": "Fitness",
+  "email": "Fitness@edu.gt",
+  "number": "4444-4444",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:58:20.731Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:58:20.731Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195ed4ce8db7a76cceca2c"
+  },
+  "name": "Bimbo",
+  "email": "Bimbo@edu.gt",
+  "number": "5555-5555",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:59:00.479Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:59:00.479Z"
+  }
+}]

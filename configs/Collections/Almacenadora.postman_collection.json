@@ -1,0 +1,871 @@
+{
+	"info": {
+		"_postman_id": "3c224fd1-da9f-4786-a810-ed7a9d3b7838",
+		"name": "Almacenadora",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42619086"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Alejandro Magno\",\r\n    \"username\":\"magno\",\r\n    \"email\":\"alejandromagno@gmail.com\",\r\n    \"password\":\"10101010\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmYjBiNGEwODRiNGI1MTE1OTQwNWYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTg2MjQyOCwiZXhwIjoxNzQ1ODY2MDI4fQ.AOs0vY8Fumea9nbYQvSKY-sQPwdx5w-F3aU2LIbsM-Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\" Lando Norris\",\r\n    \"username\":\"nor\",\r\n    \"email\":\"lnorris@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"role\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/user/editar/680fb225509526fb954260e8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"user",
+						"editar",
+						"680fb225509526fb954260e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBmYjIyNTUwOTUyNmZiOTU0MjYwZTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTg4NTcxMywiZXhwIjoxNzQ1ODg5MzEzfQ.WdL0kDKe-qgGH3nO2LnAJIGkg_3DdLPXrMaWU58-fz0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/user/eliminar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"user",
+						"eliminar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proovedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Categorias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWFlMWNlOGRiN2E3NmNjZWNhMDMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5MjE4MSwiZXhwIjoxNzQ2NDk1NzgxfQ.BrM0Zb-VzRMFC-YtOcGnkoyhPgqi8O32S4CIMDaIBlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Juguetes\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registar Producto (History)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFhMTA0OWQ4NTQyZTkxMjY0NWJhNDAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjU0MjQ4NywiZXhwIjoxNzQ2NTQ2MDg3fQ.iGeFnMqV1pHMkkNs1Zttv0KjCbBDmRFmj4qupUltFYc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/history/register-product/681960f1ce8db7a76cceca3a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"history",
+						"register-product",
+						"681960f1ce8db7a76cceca3a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retirar Producto (History)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFhMTA0OWQ4NTQyZTkxMjY0NWJhNDAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjU0OTQ3MCwiZXhwIjoxNzQ2NTUzMDcwfQ.bXN5y7tRXBdJnRM2SNitSevWTl73ifRv8vjFnfmoMd4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 1,\r\n    \"motive\": \"Para un proveedor\",\r\n    \"destiny\": \"Estados Unidos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/history/withdraw-product/681960f1ce8db7a76cceca3a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"history",
+						"withdraw-product",
+						"681960f1ce8db7a76cceca3a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Historial",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 20,\r\n    \"motive\": \"Para un proveedor\",\r\n    \"destiny\": \"Estados Unidos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/history/get-history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"history",
+						"get-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Proveedor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWFlMWNlOGRiN2E3NmNjZWNhMDMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5MjE4MSwiZXhwIjoxNzQ2NDk1NzgxfQ.BrM0Zb-VzRMFC-YtOcGnkoyhPgqi8O32S4CIMDaIBlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Bimbo\",\r\n    \"email\": \"Bimbo@edu.gt\",\r\n    \"number\": \"5555-5555\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Proveedor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC2\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider/6810e03236cf9bb038bf729d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"provider",
+						"6810e03236cf9bb038bf729d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Celulares\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category/6810dfaa36cf9bb038bf7299",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"category",
+						"6810dfaa36cf9bb038bf7299"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Proveedor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC2\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/provider/6810e03236cf9bb038bf729d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"provider",
+						"6810e03236cf9bb038bf729d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Category",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTkzNjI4MCwiZXhwIjoxNzQ1OTM5ODgwfQ.CrWYHdEoqQiDL3_2UoTQ1c7fHZ1UwPIAXfeWlQHHGYQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"USAC2\",\r\n    \"email\": \"USAC@edu.gt\",\r\n    \"number\": \"59129451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/category/6810dfaa36cf9bb038bf7299",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"category",
+						"6810dfaa36cf9bb038bf7299"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWFlMWNlOGRiN2E3NmNjZWNhMDMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5MjE4MSwiZXhwIjoxNzQ2NDk1NzgxfQ.BrM0Zb-VzRMFC-YtOcGnkoyhPgqi8O32S4CIMDaIBlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Pistola de juguete\",\r\n  \"description\": \"Juguete tipo pistola\",\r\n  \"provider\": \"Matel\",\r\n  \"price\": 350,\r\n  \"stock\": 250,\r\n  \"category\": \"Juguetes\",\r\n  \"entryDate\": \"11/09/2025\",\r\n  \"expirationDate\": \"11/09/2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Producto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTk0NTEyMiwiZXhwIjoxNzQ1OTQ4NzIyfQ.54vwCXbAq-7vx8nSBpXB5d4lbB3ij8OQ0DvGBwdgceQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Moto Edge 60 Fusion\",\r\n  \"description\": \"Colaboracion con Pantone\",\r\n  \"provider\": \"Motorola\",\r\n  \"price\": 3500,\r\n  \"stock\": 17,\r\n  \"category\": \"Celulares\",\r\n  \"entryDate\": \"28/04/2025\",\r\n  \"exitDate\": \"11/09/2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/681107459dd173fa8dfbafb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						"681107459dd173fa8dfbafb8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwZGRlZDM2Y2Y5YmIwMzhiZjcyOTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NTk0NTEyMiwiZXhwIjoxNzQ1OTQ4NzIyfQ.54vwCXbAq-7vx8nSBpXB5d4lbB3ij8OQ0DvGBwdgceQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Moto Edge 60 Fusion\",\r\n  \"description\": \"Colaboracion con Pantone\",\r\n  \"provider\": \"Motorola\",\r\n  \"price\": 3500,\r\n  \"stock\": 17,\r\n  \"category\": \"Celulares\",\r\n  \"entryDate\": \"28/04/2025\",\r\n  \"exitDate\": \"11/09/2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/681107459dd173fa8dfbafb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						"681107459dd173fa8dfbafb8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos Categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/category/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						"category",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos Fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/recentEgresed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						"recentEgresed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos Nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/product/search/60",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"product",
+						"search",
+						"60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5NWEwOGNlOGRiN2E3NmNjZWM5ZmEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjQ5NDQ1NywiZXhwIjoxNzQ2NDk4MDU3fQ.mnJDkx_RXBAQeU-R_t8CFOgI35hqDEjnVsdzLLMhlZU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Kevin Guitierrez\",\r\n  \"email\": \"kevingutierrez@gmail.com\",\r\n  \"nit\": \"7894561234\",\r\n  \"phone\": \"+502 321 654 789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"client",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNTE0ZTI3NjhiMDY3YjRjZWUyYzEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjAzMTEwNywiZXhwIjoxNzQ2MDM0NzA3fQ.aCzpoSqcrjSYWjyBNn_9Z1jb_Hjy1K3Nzjonk0lNV9g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Juan Pérez XD\",\r\n  \"email\": \"juan.perez@example.com\",\r\n  \"nit\": \"123456789012\",\r\n  \"phone\": \"+591 123 456 789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/68125229609f475c7807d286",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"client",
+						"68125229609f475c7807d286"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNTE0ZTI3NjhiMDY3YjRjZWUyYzEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjAzMTEwNywiZXhwIjoxNzQ2MDM0NzA3fQ.aCzpoSqcrjSYWjyBNn_9Z1jb_Hjy1K3Nzjonk0lNV9g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Juan Pérez XD\",\r\n  \"email\": \"juan.perez@example.com\",\r\n  \"nit\": \"123456789012\",\r\n  \"phone\": \"+591 123 456 789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/68125229609f475c7807d286",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"client",
+						"68125229609f475c7807d286"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEyNTE0ZTI3NjhiMDY3YjRjZWUyYzEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NjAzMTEwNywiZXhwIjoxNzQ2MDM0NzA3fQ.aCzpoSqcrjSYWjyBNn_9Z1jb_Hjy1K3Nzjonk0lNV9g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Juan Pérez\",\r\n  \"email\": \"juan.perez@example.com\",\r\n  \"nit\": \"123456789012\",\r\n  \"phone\": \"+591 123 456 789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/almacenadoraSystem/v1/client/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"almacenadoraSystem",
+						"v1",
+						"client",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

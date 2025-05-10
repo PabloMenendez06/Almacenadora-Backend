@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "68110e13ad4172208ab3f9b7"
+  },
+  "name": "default",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-29T17:36:19.412Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-29T17:36:19.412Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195b95ce8db7a76cceca08"
+  },
+  "name": "Telefonos",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:45:09.986Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:45:09.986Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195ba6ce8db7a76cceca0c"
+  },
+  "name": "Ropa",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:45:26.565Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:45:26.565Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195bb9ce8db7a76cceca10"
+  },
+  "name": "Objetos deportivos",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:45:45.985Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:45:45.985Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195be9ce8db7a76cceca14"
+  },
+  "name": "Alimentos",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:46:33.120Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:46:33.120Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68195c48ce8db7a76cceca18"
+  },
+  "name": "Juguetes",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-06T00:48:08.619Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T00:48:08.619Z"
+  }
+}]
